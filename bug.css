@@ -1,0 +1,13 @@
+The following CSS code snippet suffers from a common yet easily missed issue: the use of the `!important` flag. While seemingly a quick fix for style conflicts, overusing `!important` can lead to hard-to-debug issues and a lack of maintainability.
+
+```css
+#myElement {
+  width: 200px;
+}
+
+.anotherClass #myElement {
+  width: 300px !important; /* Problem: Overuse of !important */
+}
+```
+
+The `!important` declaration overrides any other style declaration for the `width` property on `#myElement` when the element also has the class `anotherClass`. This can lead to unexpected behavior as styles become unpredictable and difficult to trace.
